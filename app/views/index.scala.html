@@ -1,0 +1,34 @@
+@(message: String)
+
+@main("RESTful URL Shortener") {
+<header>
+    <H1>RESTful URL Shortener</H1>
+</header>
+<body>
+    <table border="1">
+        <thead>
+        Routes de l'API
+        </thead>
+        <tr>
+            <th>Méthode</th><th>Route</th><th>Description</th>
+        </tr>
+        <tr>
+            <td>GET</td><td>/url</td><td>Lister les URLs complètes/minifiées</td>
+        </tr>
+        <tr>
+            <td>POST</td><td>/url</td><td>Minifier une URL fournie en paramètre</td>
+        </tr>
+        <tr>
+            <td>GET</td><td>/url/:id</td><td>Récupérer l'URL complète à partir de l'URL minifiée passée en paramètre</td>
+        </tr>
+    </table>
+
+</body>
+<footer>
+    <hr/>Ahmed MAALEJ - 2017
+    <p>
+        <b>Code source: </b>
+        <a href="https://github.com/ahmedmaalej74" target="_blank">https://github.com/ahmedmaalej74</a>
+    </p>
+</footer>
+}
