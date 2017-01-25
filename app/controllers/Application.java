@@ -21,7 +21,7 @@ public class Application extends Controller {
     }
 
     public Result list() {
-        return ok(Json.toJson(map.values()));
+        return ok(Json.toJson(map));
     }
 
     public Result shorten() throws java.io.IOException {
@@ -49,13 +49,15 @@ public class Application extends Controller {
             //Obtenir un hash unique
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             DataOutputStream dos = new DataOutputStream(baos);
-            UUID uuid = UUID.randomUUID();
-            dos.writeLong(uuid.getMostSignificantBits());
-            String encoded = new String(Base64.encodeBase64(baos.toByteArray()), "ISO-8859-1");
 
-            //Ajuster la taille du hash à 8 caractères
-            shortUrlKey = StringUtils.left(encoded, 8); // returns the leftmost 6 characters
+            do {
+                UUID uuid = UUID.randomUUID();
+                dos.writeLong(uuid.getMostSignificantBits());
+                String encoded = new String(Base64.encodeBase64(baos.toByteArray()), "ISO-8859-1");
 
+                //Ajuster la taille du hash à 8 caractères
+                shortUrlKey = StringUtils.left(encoded, 6); // retourne les 6 premiers caractères à gauche
+            } while (map.containsKey(shortUrlKey));  // répéter le processus jusqu'à avoir un hash (composé de 6 caractères) unique
             //Associer l'url minifié à l'url d'origine
             map.put(shortUrlKey, completeUrl);
         }
