@@ -36,6 +36,6 @@ Ce projet est basé sur <https://github.com/boldradius/rest-java-play-sample>
 * Récupérer l'URL __*https://www.linkedin.com/in/maalejahmed*__
 
    ```curl -vX GET http://localhost:9000/url/JYw4IEZv```
-* La méthode retournera le code HTTP __*403 Forbidden*__ si l'URL na pas été trouvée.
+* La méthode retournera le code HTTP __*403 Forbidden*__ si l'URL n'a pas été trouvée.
 * La méthode retournera l'URl d'origine si l'URL a été trouvée.
     ```{"url":"https://www.linkedin.com/in/maalejahmed"}```
