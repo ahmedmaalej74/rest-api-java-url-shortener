@@ -27,7 +27,7 @@ Ce projet est basé sur <https://github.com/boldradius/rest-java-play-sample>
 
    ```curl -vX POST http://localhost:9000/url -d '{"url":"www.linkedin.com/in/maalejahmed"}' Type: application/json"```
 
-* Retour: ```{"url":"JYw4IEZv"}```
+* Retour: ```{"url":"JYw4IEZv"}``` (cas d'exécution)
 
 ---
 
